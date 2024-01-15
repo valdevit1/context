@@ -1,0 +1,162 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400&display=swap");
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+  color: #43a047;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+h1 {
+  margin-bottom: 0;
+}
+
+/* Navbar */
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  color: #1b441d;
+}
+
+.navbar {
+  background: #43a047;
+  padding: 20px;
+  color: white;
+  text-align: center;
+}
+
+.navbar a {
+  margin: 1rem;
+}
+
+/* gallery */
+
+.gallery {
+  display: grid;
+  gap: 40px;
+  grid-template-columns: repeat(5, 1fr);
+  width: 80vw;
+  grid-auto-rows: 250px;
+  justify-items: center;
+}
+
+.gallery .photo {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  text-align: left;
+  text-shadow: 0px 0px 30px black;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+  aspect-ratio: 2/1;
+  transition: filter 0.3s ease;
+}
+
+.gallery .photo:hover {
+  box-shadow: 0px 0px 2px 2px black;
+  filter: brightness(25%);
+}
+
+.gallery .photo svg {
+  align-self: flex-end;
+}
+
+.p-3 {
+  padding: 30px;
+}
+
+.card-container {
+  position: relative;
+  cursor: pointer;
+}
+
+.card-container p {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translate(-50%);
+  color: white;
+  font-weight: 800;
+  font-size: 18px;
+  letter-spacing: 0.1rem;
+  text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.736);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-container:hover p {
+  opacity: 1;
+}
+
+.card-container svg {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  transition: transform 0.5s;
+}
+
+.card-container:hover svg {
+  transform: scale(1.5);
+}
+
+.fav-container {
+  text-align: center;
+  color: #43a047;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 200px;
+  color: #43a047;
+}
+
+.error h1 {
+  font-size: 80px;
+}
+
+.error p {
+  font-size: 20px;
+}
+
+@media (width < 1300px) {
+  .gallery {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (width < 1080px) {
+  .gallery {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (width < 600px) {
+  .gallery {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
